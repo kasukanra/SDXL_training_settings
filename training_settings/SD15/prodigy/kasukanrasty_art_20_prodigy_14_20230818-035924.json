@@ -70,7 +70,7 @@
   "random_crop": false,
   "rank_dropout": 0,
   "reg_data_dir": "",
-  "resume": "E:\\lora_new_july\\proejct_lora\\project_lora_20\\model_13\\kasukanrasty_art_20_prodigy_13-000004-state",
+  "resume": "",
   "sample_every_n_epochs": 0,
   "sample_every_n_steps": 376,
   "sample_prompts": "kasukanrasty, masterpiece, best quality, a bust up three fourth perspective portrait view of a young woman in white shirt, upper body, looking at viewer, simple background --n cropped, low quality, worst quality, bad anatomy, bad composition, poor, low effort --w 768 --h 768 --d 122537 --l 7 --s 35\nkasukanrasty, masterpiece, best quality, a bust up three fourth perspective portrait view of a young woman in white shirt, upper body, looking at viewer, simple background --n cropped, low quality, worst quality, bad anatomy, bad composition, poor, low effort --w 768 --h 768 --d 119887 --l 7 --s 35\nkasukanrasty, masterpiece, best quality, a bust up three fourth perspective portrait view of a young woman in white shirt, upper body, looking at viewer, simple background --n cropped, low quality, worst quality, bad anatomy, bad composition, poor, low effort --w 768 --h 768 --d 810021 --l 7 --s 35",
