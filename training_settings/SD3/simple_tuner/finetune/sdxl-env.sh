@@ -4,7 +4,7 @@
 # lora - train a small network for a character or style, or both. quite versatile.
 # full - requires lots of vram, trains very slowly, needs a lot of data and concepts.
 # export MODEL_TYPE='lora'
-export MODEL_TYPE='lora'
+export MODEL_TYPE='full'
 
 # Set this to 'true' if you are training a Stable Diffusion 3 checkpoint.
 # Use MODEL_NAME="stabilityai/stable-diffusion-3-medium-diffusers"
@@ -46,20 +46,8 @@ export CHECKPOINTING_LIMIT=28
 
 # This is decided as a relatively conservative 'constant' learning rate.
 # Adjust higher or lower depending on how burnt your model becomes.
-# export LEARNING_RATE=8e-7 #@param {type:"number"}
-# export LEARNING_RATE=7.5e-6 #@param {type:"number"}
-# export LEARNING_RATE=3e-5 #@param {type:"number"}
-# export LEARNING_RATE=4e-4 #@param {type:"number"}
-# export LEARNING_RATE=8e-4 #@param {type:"number"}
-# export LEARNING_RATE=1.5e-3 #@param {type:"number"}
-# export LEARNING_RATE=9e-4 #@param {type:"number"}
-# export LEARNING_RATE=4e-4 #@param {type:"number"}
-# export LEARNING_RATE=1.5e-3 #@param {type:"number"}
-# export LEARNING_RATE=4e-4 #@param {type:"number"}
-# export LEARNING_RATE=8e-4 #@param {type:"number"}
-# export LEARNING_RATE=6.5e-4 #@param {type:"number"}
-export LEARNING_RATE=4.25e-4 #@param {type:"number"}
-# export LEARNING_RATE=5e-4 #@param {type:"number"}
+# export LEARNING_RATE=8e-6 #@param {type:"number"}
+export LEARNING_RATE=1.5e-5 #@param {type:"number"}
 
 # Using a Huggingface Hub model:
 # export MODEL_NAME="stabilityai/stable-diffusion-xl-base-1.0"
@@ -71,12 +59,7 @@ export MODEL_NAME="stabilityai/stable-diffusion-3-medium-diffusers"
 # Make DEBUG_EXTRA_ARGS empty to disable wandb.
 export DEBUG_EXTRA_ARGS="--report_to=wandb"
 export TRACKER_PROJECT_NAME="sd3-training"
-# export TRACKER_RUN_NAME="simpletuner-sd3-11-lora"
-# export TRACKER_RUN_NAME="simpletuner-sd3-12-lora"
-# export TRACKER_RUN_NAME="simpletuner-sd3-13-lora"
-# export TRACKER_RUN_NAME="simpletuner-sd3-14-lora"
-# export TRACKER_RUN_NAME="simpletuner-sd3-15-lora"
-export TRACKER_RUN_NAME="simpletuner-sd3-16-lora"
+export TRACKER_RUN_NAME="simpletuner-sd3-09"
 
 # Max number of steps OR epochs can be used. Not both.
 # export MAX_NUM_STEPS=24000
@@ -85,7 +68,7 @@ export MAX_NUM_STEPS=24000
 export NUM_EPOCHS=0
 
 # A convenient prefix for all of your training paths.
-export BASE_DIR="/home/pure_water_100/simpletuner_models/lora_16/datasets"
+export BASE_DIR="/home/pure_water_100/simpletuner_models/ninth_run/datasets"
 export DATALOADER_CONFIG="${BASE_DIR}/multidatabackend.json"
 export OUTPUT_DIR="${BASE_DIR}/models"
 # Set this to "true" to push your model to Hugging Face Hub.
@@ -127,7 +110,6 @@ export VALIDATION_RESOLUTION=$RESOLUTION
 
 
 # Adjust this for your GPU memory size. This, and resolution, are the biggest VRAM killers.
-# export TRAIN_BATCH_SIZE=6
 export TRAIN_BATCH_SIZE=6
 # Accumulate your update gradient over many steps, to save VRAM while still having higher effective batch size:
 # effective batch size = ($TRAIN_BATCH_SIZE * $GRADIENT_ACCUMULATION_STEPS).
@@ -144,8 +126,7 @@ export LR_WARMUP_STEPS=2400
 # Caption dropout probability. Set to 0.1 for 10% of captions dropped out. Set to 0 to disable.
 # You may wish to disable dropout if you want to limit your changes strictly to the prompts you show the model.
 # You may wish to increase the rate of dropout if you want to more broadly adopt your changes across the model.
-# export CAPTION_DROPOUT_PROBABILITY=0.25
-export CAPTION_DROPOUT_PROBABILITY=0.2
+export CAPTION_DROPOUT_PROBABILITY=0.25
 
 export METADATA_UPDATE_INTERVAL=65
 export VAE_BATCH_SIZE=12
@@ -234,8 +215,3 @@ export ACCELERATE_EXTRA_ARGS=""                          # --multi_gpu or other 
 export TRAINING_DYNAMO_BACKEND='no'                # or 'no' if you want to disable torch compile in case of performance issues or lack of support (eg. AMD)
 
 export TOKENIZERS_PARALLELISM=false
-
-export LORA_RANK=256
-# export LORA_RANK=384
-export LORA_ALPHA=256
-# export LORA_ALPHA=384
