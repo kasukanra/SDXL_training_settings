@@ -68,7 +68,7 @@ export MAX_NUM_STEPS=24000
 export NUM_EPOCHS=0
 
 # A convenient prefix for all of your training paths.
-export BASE_DIR="/home/pure_water_100/simpletuner_models/ninth_run/datasets"
+export BASE_DIR="/home/pure_water_100/simpletuner_models/sd3_09/datasets"
 export DATALOADER_CONFIG="${BASE_DIR}/multidatabackend.json"
 export OUTPUT_DIR="${BASE_DIR}/models"
 # Set this to "true" to push your model to Hugging Face Hub.
