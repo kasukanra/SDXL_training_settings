@@ -1,0 +1,826 @@
+{
+  "last_node_id": 98,
+  "last_link_id": 91,
+  "nodes": [
+    {
+      "id": 75,
+      "type": "Display Any (rgthree)",
+      "pos": {
+        "0": -1007,
+        "1": -299
+      },
+      "size": {
+        "0": 210,
+        "1": 76
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 55,
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 79,
+      "type": "Display Any (rgthree)",
+      "pos": {
+        "0": 127,
+        "1": -349
+      },
+      "size": {
+        "0": 210,
+        "1": 76
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 83,
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 82,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 1584,
+        "1": -81
+      },
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 63,
+          "widget": {
+            "name": "text_a"
+          }
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 91,
+          "widget": {
+            "name": "text_b"
+          }
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          }
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            66
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        ",",
+        "true",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 83,
+      "type": "String Replace (mtb)",
+      "pos": {
+        "0": -602,
+        "1": -55
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "link": 82,
+          "widget": {
+            "name": "string"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            83,
+            86
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace (mtb)"
+      },
+      "widgets_values": [
+        "",
+        ".jpg",
+        ""
+      ]
+    },
+    {
+      "id": 95,
+      "type": "Reroute",
+      "pos": {
+        "0": -27.87755584716797,
+        "1": 403.8861999511719
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 87,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            88
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 87,
+      "type": "Joy_caption_load",
+      "pos": {
+        "0": -2591,
+        "1": -608
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "JoyPipeline",
+          "type": "JoyPipeline",
+          "links": [
+            76
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Joy_caption_load"
+      },
+      "widgets_values": [
+        "unsloth/Meta-Llama-3.1-8B-bnb-4bit"
+      ]
+    },
+    {
+      "id": 98,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 1402,
+        "1": 401
+      },
+      "size": {
+        "0": 476.1673278808594,
+        "1": 232.166748046875
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 90,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "This image is a digital painting depicting a lush, verdant garden scene, The painting employs a realistic style with a focus on natural light and shadow, The primary subject is a cluster of delicate, pink roses in full bloom, their petals delicately rendered with soft, brushstrokes that convey a sense of texture and depth, The roses are interspersed among dark, leafy green foliage, which is painted with a mix of light and dark greens, suggesting a variety of plant species, The background is a mix of dark and light tones, with hints of sunlight filtering through the foliage, creating a dappled effect, The overall color palette is dominated by greens, pinks, and dark browns, with subtle hints of yellow and orange, The painting captures the essence of a serene, sunlit garden, with a focus on the interplay of light and shadow, and the delicate beauty of nature, The style is reminiscent of classical impressionist paintings, with a focus on light and color, but with a modern digital medium that enhances the realism and vibrancy of the scene,"
+      ]
+    },
+    {
+      "id": 96,
+      "type": "String Replace (mtb)",
+      "pos": {
+        "0": 265,
+        "1": 429
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "link": 88,
+          "widget": {
+            "name": "string"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            89
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace (mtb)"
+      },
+      "widgets_values": [
+        "",
+        "\\n",
+        ""
+      ]
+    },
+    {
+      "id": 92,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": -658,
+        "1": -1017
+      },
+      "size": {
+        "0": 381.6745300292969,
+        "1": 214.77133178710938
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 80,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "This image is a digital painting depicting a lush, verdant garden scene. The painting employs a realistic style with a focus on natural light and shadow. The primary subject is a cluster of delicate, pink roses in full bloom, their petals delicately rendered with soft, brushstrokes that convey a sense of texture and depth. The roses are interspersed among dark, leafy green foliage, which is painted with a mix of light and dark greens, suggesting a variety of plant species. The background is a mix of dark and light tones, with hints of sunlight filtering through the foliage, creating a dappled effect. The overall color palette is dominated by greens, pinks, and dark browns, with subtle hints of yellow and orange. The painting captures the essence of a serene, sunlit garden, with a focus on the interplay of light and shadow, and the delicate beauty of nature. The style is reminiscent of classical impressionist paintings, with a focus on light and color, but with a modern digital medium that enhances the realism and vibrancy of the scene."
+      ]
+    },
+    {
+      "id": 89,
+      "type": "Joy_caption",
+      "pos": {
+        "0": -1449,
+        "1": -740
+      },
+      "size": {
+        "0": 434.3624267578125,
+        "1": 194.12754821777344
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "joy_pipeline",
+          "type": "JoyPipeline",
+          "link": 76
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            80,
+            87
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Joy_caption"
+      },
+      "widgets_values": [
+        "Please describe this image in as much detail as possible.",
+        300,
+        0.1,
+        false
+      ]
+    },
+    {
+      "id": 52,
+      "type": "DataSet_TextFilesSave",
+      "pos": {
+        "0": 2347,
+        "1": -750
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "TextFileNames",
+          "type": "STRING",
+          "link": 86,
+          "widget": {
+            "name": "TextFileNames"
+          }
+        },
+        {
+          "name": "TextFileContents",
+          "type": "STRING",
+          "link": 66,
+          "widget": {
+            "name": "TextFileContents"
+          }
+        },
+        {
+          "name": "destination",
+          "type": "STRING",
+          "link": 44,
+          "widget": {
+            "name": "destination"
+          }
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "DataSet_TextFilesSave"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "test_single",
+        "Overwrite",
+        "Windows"
+      ],
+      "color": "#232c33",
+      "bgcolor": "#084c61"
+    },
+    {
+      "id": 97,
+      "type": "String Replace (mtb)",
+      "pos": {
+        "0": 796.22802734375,
+        "1": 431.5987548828125
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "link": 89,
+          "widget": {
+            "name": "string"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            90,
+            91
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Replace (mtb)"
+      },
+      "widgets_values": [
+        "",
+        ".",
+        ","
+      ]
+    },
+    {
+      "id": 74,
+      "type": "Load Image Batch",
+      "pos": {
+        "0": -2035,
+        "1": -139
+      },
+      "size": {
+        "0": 315,
+        "1": 222
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "path",
+          "type": "STRING",
+          "link": 54,
+          "widget": {
+            "name": "path"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            75
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "filename_text",
+          "type": "STRING",
+          "links": [
+            55,
+            82
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Load Image Batch"
+      },
+      "widgets_values": [
+        "incremental_image",
+        0,
+        "Batch 007",
+        "",
+        "*",
+        "false",
+        "true"
+      ]
+    },
+    {
+      "id": 60,
+      "type": "Text Multiline",
+      "pos": {
+        "0": -2639,
+        "1": -125
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            54
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "/pure_water_100/datasets/fantasy_art"
+      ]
+    },
+    {
+      "id": 64,
+      "type": "Text Multiline",
+      "pos": {
+        "0": 279,
+        "1": -712
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            44
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "/pure_water_100/datasets/fantasy_art_captions"
+      ]
+    },
+    {
+      "id": 80,
+      "type": "Text Multiline",
+      "pos": {
+        "0": 784,
+        "1": -104
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            63
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "k4s4"
+      ]
+    }
+  ],
+  "links": [
+    [
+      44,
+      64,
+      0,
+      52,
+      2,
+      "STRING"
+    ],
+    [
+      54,
+      60,
+      0,
+      74,
+      0,
+      "STRING"
+    ],
+    [
+      55,
+      74,
+      1,
+      75,
+      0,
+      "*"
+    ],
+    [
+      63,
+      80,
+      0,
+      82,
+      0,
+      "STRING"
+    ],
+    [
+      66,
+      82,
+      0,
+      52,
+      1,
+      "STRING"
+    ],
+    [
+      75,
+      74,
+      0,
+      89,
+      1,
+      "IMAGE"
+    ],
+    [
+      76,
+      87,
+      0,
+      89,
+      0,
+      "JoyPipeline"
+    ],
+    [
+      80,
+      89,
+      0,
+      92,
+      0,
+      "STRING"
+    ],
+    [
+      82,
+      74,
+      1,
+      83,
+      0,
+      "STRING"
+    ],
+    [
+      83,
+      83,
+      0,
+      79,
+      0,
+      "*"
+    ],
+    [
+      86,
+      83,
+      0,
+      52,
+      0,
+      "STRING"
+    ],
+    [
+      87,
+      89,
+      0,
+      95,
+      0,
+      "*"
+    ],
+    [
+      88,
+      95,
+      0,
+      96,
+      0,
+      "STRING"
+    ],
+    [
+      89,
+      96,
+      0,
+      97,
+      0,
+      "STRING"
+    ],
+    [
+      90,
+      97,
+      0,
+      98,
+      0,
+      "STRING"
+    ],
+    [
+      91,
+      97,
+      0,
+      82,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8140274938684013,
+      "offset": [
+        2933.6134019008723,
+        1153.0291170426212
+      ]
+    }
+  },
+  "version": 0.4
+}
