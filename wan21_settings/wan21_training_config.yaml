@@ -1,0 +1,108 @@
+---
+# This configuration requires 48GB of VRAM or more to operate
+job: extension
+config:
+  # this name will be the folder and filename name
+  name: "fantasy_art_wan21_finetune_v1"
+  process:
+    - type: 'sd_trainer'
+      training_folder: "/home/pure_water_100/workspace/aitk_models/wan21_fantasy_art_01"
+      device: cuda:0
+      trigger_word: "k4s4"
+      logging:
+        use_wandb: true
+        project_name: "wan21_fantasy_art"
+        run_name: "wan21_fantasy_art_01"
+      save:
+        dtype: bf16 # precision to save
+        save_every: 200 # save every this many steps
+        max_step_saves_to_keep: 600 # how many intermittent saves to keep
+        save_format: 'diffusers' # 'diffusers'
+      datasets:
+        - folder_path: "/home/pure_water_100/datasets/SDXL/full_dataset_neo_clean"
+          caption_ext: "txt"
+          caption_dropout_rate: 0.05  # will drop out the caption 5% of time
+          shuffle_tokens: false  # shuffle caption order, split by commas
+          cache_latents_to_disk: true  # leave this true unless you know what you're doing
+      train:
+        batch_size: 1
+        # IMPORTANT! For Flex, you must bypass the guidance embedder during training
+        bypass_guidance_embedding: true
+
+        # can be 'sigmoid', 'linear', or 'lognorm_blend'
+        timestep_type: 'sigmoid' 
+        
+        steps: 80000
+        # gradient_accumulation: 1
+        # gradient_accumulation: 6
+        gradient_accumulation: 6
+        train_unet: true
+        train_text_encoder: false  # probably won't work with flex
+        gradient_checkpointing: true  # need the on unless you have a ton of vram
+        noise_scheduler: "flowmatch" # for training only
+        optimizer: "adafactor"
+        # lr: 1e-4
+        # lr: 5e-5
+        # lr: 2e-5
+        # lr: 1e-5
+        # lr: 2e-5
+        # lr: 4e-5
+        # lr: 2.5e-5
+        # lr: 1e-5
+        # lr: 2.5e-5
+        # lr: 4e-5
+        # lr: 5.5e-5
+        # lr: 7e-5
+        # lr: 8.5e-5
+        # lr: 1.5e-4
+        # lr: 1e-4
+        lr: 8.5e-5
+
+        # Paramiter swapping can reduce vram requirements. Set factor from 1.0 to 0.0. 
+        # 0.1 is 10% of paramiters active at easc step. Only works with adafactor
+
+        do_paramiter_swapping: true
+        paramiter_swapping_factor: 0.5
+
+        # uncomment this to skip the pre training sample
+        # skip_first_sample: true
+        # uncomment to completely disable sampling
+        # disable_sampling: true
+
+        # ema will smooth out learning, but could slow it down. Recommended to leave on if you have the vram
+        ema_config:
+          use_ema: true
+          ema_decay: 0.99
+
+        # will probably need this if gpu supports it for flex, other dtypes may not work correctly
+        dtype: bf16
+        # unload_text_encoder: true
+      model:
+        # huggingface model name or path
+        name_or_path: "/home/pure_water_100/model_store/Wan2.1-T2V-14B-Diffusers"
+        arch: 'wan21'
+      sample:
+        sampler: "flowmatch" # must match train.noise_scheduler
+        sample_every: 50 # sample every this many steps
+        width: 1024
+        height: 1024
+        num_frames: 1
+        fps: 15
+        prompts:
+          # you can add [trigger] to the prompts here and it will be replaced with the trigger word
+          # - "[trigger] holding a sign that says 'I LOVE PROMPTS!'"\
+          - "[trigger], a wide view of four hooded figures congregating outside some buildings, green grass, daylight, late afternoon lighting, golden hour, shadow cast from right to left diagonally over center of image"
+          - "[trigger], a medium view of a young woman with short orange hair and closed eyes wearing a thick black coat and large dark bronze pauldrons, holding a large black sword with dark gold accents in front of her with both arms, outdoor icy cold environment during a blizzard, white steps leading into a cave with crystal stalactites behind the woman, neutral white lighting, cropped"
+          - "[trigger], a waist up view of a beautiful female blonde young woman, green eyes, wearing a white dress"
+          - "[trigger], a wide view of a small village with white buildings and red accents in the background, a reflective lake in the midground, various masked figures in the foreground walking through a marsh, high key lighting, atmospheric lighting"
+          - "[trigger], woman with red hair, playing chess at the park, bomb going off in the background" 
+        neg: ""  # not used on flex
+        seed: 42
+        walk_seed: true
+        # guidance_scale: 5
+        guidance_scale: 2.5
+        sample_steps: 30
+# you can add any additional meta info here. [name] is replaced with config name at top
+meta:
+  name: "[name]"
+  version: '1.0'
