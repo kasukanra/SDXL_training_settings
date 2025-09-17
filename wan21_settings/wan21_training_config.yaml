@@ -24,6 +24,7 @@ config:
           caption_dropout_rate: 0.05  # will drop out the caption 5% of time
           shuffle_tokens: false  # shuffle caption order, split by commas
           cache_latents_to_disk: true  # leave this true unless you know what you're doing
+          resolution: [ 512, 768, 1024 ]
       train:
         batch_size: 1
         # IMPORTANT! For Flex, you must bypass the guidance embedder during training
